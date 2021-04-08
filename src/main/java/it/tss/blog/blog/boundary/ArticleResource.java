@@ -55,7 +55,7 @@ public class ArticleResource {
     private Long articleId;
 
     @PATCH
-    @RolesAllowed({"ADMIN", "USER"})
+    @RolesAllowed({"ADMIN"})
     @Produces(MediaType.APPLICATION_JSON)
     public JsonObject update(JsonObject json) {
         String title = json.getString("title");
@@ -88,7 +88,7 @@ public class ArticleResource {
 
     @POST
     @Path("comments")
-    @RolesAllowed({"ADMIN", "USER"})
+    @RolesAllowed({"ADMIN"})
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public JsonObject create(JsonObject json) {

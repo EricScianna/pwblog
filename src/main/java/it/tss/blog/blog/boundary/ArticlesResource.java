@@ -10,7 +10,6 @@ import it.tss.blog.blog.entity.Article;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.annotation.security.DenyAll;
-import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.json.JsonObject;
@@ -58,7 +57,7 @@ public class ArticlesResource {
     }
 
     @POST
-    @RolesAllowed({"ADMIN", "USER"})
+    @RolesAllowed({"ADMIN"})
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public JsonObject create(JsonObject json) {
