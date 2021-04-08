@@ -24,7 +24,6 @@ public class Article extends AbstractEntity implements Serializable {
     private String title;
     private String body;
     private String tags;
-    private boolean deleted;
 
     public Article() {
     }
@@ -57,14 +56,6 @@ public class Article extends AbstractEntity implements Serializable {
 
     public void setTags(String tags) {
         this.tags = tags;
-    }
-
-    public boolean isDeleted() {
-        return deleted;
-    }
-
-    public void setDeleted(boolean deleted) {
-        this.deleted = deleted;
     }
 
     public JsonObject toJson() {

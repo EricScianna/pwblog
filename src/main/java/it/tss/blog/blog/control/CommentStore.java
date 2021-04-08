@@ -5,6 +5,7 @@
  */
 package it.tss.blog.blog.control;
 
+import it.tss.blog.blog.entity.Article;
 import it.tss.blog.blog.entity.Comment;
 import java.util.List;
 import java.util.Optional;
@@ -50,4 +51,8 @@ public class CommentStore {
                 .getResultList();
     }
 
+    public void delete(Long id) {
+        Comment found = em.find(Comment.class, id);
+        em.remove(found);
+    }
 }
